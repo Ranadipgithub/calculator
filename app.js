@@ -4,26 +4,27 @@ let str = "";
 
 btns.forEach(button => {
     button.addEventListener('click', function () {
-        let buttonText = button.innerText.trim();
+        let btn_text = button.innerText;
 
-        if (buttonText === "=") {
+        if (btn_text === "=") {
             str = eval(str);
             inp.value = str;
         } 
-
-        else if (buttonText === "AC") {
+        
+        else if (btn_text === "AC") {
             str = "";
             inp.value = str;
         } 
         
-        else if (buttonText === "DEL") {
+        else if (btn_text === "DEL") {
             str = str.substring(0, str.length - 1);
             inp.value = str;
         } 
-
+        
         else {
-            str += buttonText;
+            str += btn_text;
             inp.value = str;
         }
     });
 });
+
